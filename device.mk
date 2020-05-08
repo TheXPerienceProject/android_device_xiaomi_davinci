@@ -66,10 +66,10 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    vendor.pa.biometrics.fingerprint.inscreen@1.0-service.xiaomi_davinci
+    vendor.xperience.biometrics.fingerprint.inscreen@1.0-service.xiaomi_davinci
 
 PRODUCT_COPY_FILES += \
-    vendor/pa/config/permissions/vendor.pa.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.pa.biometrics.fingerprint.inscreen.xml
+    vendor/xperience/config/permissions/vendor.xperience.biometrics.fingerprint.inscreen.xml:system/etc/permissions/vendor.xperience.biometrics.fingerprint.inscreen.xml
 
 # FM
 PRODUCT_PACKAGES += \
