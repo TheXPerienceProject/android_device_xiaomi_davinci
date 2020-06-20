@@ -55,7 +55,7 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CONFIG := Yuki_defconfig
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-  TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6150
+  TARGET_KERNEL_SOURCE := kernel/xiaomi/davinci
 endif
 
 NEED_KERNEL_MODULE_SYSTEM := true
@@ -156,8 +156,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 USE_SENSOR_MULTI_HAL := true
 
 # Sepolicy
+include device/qcom/sepolicy/sepolicy.mk
 TARGET_SEPOLICY_DIR := msmsteppe
-
+TARGET_USES_PREBUILT_VENDOR_SEPOLICY := true
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
     $(DEVICE_PATH)/sepolicy/private
 

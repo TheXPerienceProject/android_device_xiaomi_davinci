@@ -138,3 +138,11 @@ PRODUCT_PACKAGES += \
 
 #PRODUCT_BOOT_JARS += \
 #    WfdCommon
+
+#for internal debug we can remove this
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.secure=0 \
+   ro.adb.secure=0 \
+   ro.debuggable=1 \
+   persist.service.adb.enable=1 \
+   security.perf_harden=0
