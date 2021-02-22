@@ -157,7 +157,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
-    vendor/xperience/config/permissions/vendor.xperience.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.xperience.biometrics.fingerprint.inscreen.xml
+    vendor/xperience/prebuilt/etc/permissions/vendor.xperience.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.xperience.biometrics.fingerprint.inscreen.xml
 
 # FM
 PRODUCT_PACKAGES += \
