@@ -31,6 +31,7 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_davinci
 TARGET_RECOVERY_DEVICE_MODULES := libinit_davinci
 
 # Kernel
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6150
 TARGET_KERNEL_CONFIG := davinci_defconfig
 
 # Partitions
