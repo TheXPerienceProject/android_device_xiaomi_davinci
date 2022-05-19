@@ -35,7 +35,7 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_davinci
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6150
-TARGET_KERNEL_CONFIG := davinci_defconfig
+TARGET_KERNEL_CONFIG := vendor/davinci_defconfig
 
 # Partitions
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
