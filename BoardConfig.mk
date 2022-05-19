@@ -6,6 +6,7 @@
 
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Inherit from sm6150-common
 include device/xiaomi/sm6150-common/BoardConfigCommon.mk
@@ -36,6 +37,11 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_davinci
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6150
 TARGET_KERNEL_CONFIG := vendor/davinci_defconfig
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    DTC_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+BOARD_KERNEL_SEPARATED_DTBO := true
+KERNEL_LD := LD=ld.lld
 
 # Partitions
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
