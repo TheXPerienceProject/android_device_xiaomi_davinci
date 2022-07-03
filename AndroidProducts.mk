@@ -5,8 +5,8 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_davinci.mk
+    $(LOCAL_DIR)/xperience_davinci.mk
 
 COMMON_LUNCH_CHOICES := \
-    derp_davinci-userdebug \
-    derp_davinci-eng
+    xperience_davinci-userdebug \
+    xperience_davinci-eng
