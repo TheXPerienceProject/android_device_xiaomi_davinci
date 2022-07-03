@@ -73,3 +73,6 @@ $(call inherit-product, vendor/xiaomi/davinci/davinci-vendor.mk)
 
 # Inherit from sm6150-common
 $(call inherit-product, device/xiaomi/sm6150-common/sm6150.mk)
+
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
