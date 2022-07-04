@@ -36,6 +36,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.xiaomi.hardware.motor@1.0.vendor
 
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)/camera
+
 PRODUCT_PACKAGES += \
     libshim_megvii
 
@@ -76,6 +79,3 @@ $(call inherit-product, vendor/xiaomi/davinci/davinci-vendor.mk)
 
 # Inherit from sm6150-common
 $(call inherit-product, device/xiaomi/sm6150-common/sm6150.mk)
-
-PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
