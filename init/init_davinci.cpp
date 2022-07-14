@@ -56,9 +56,9 @@ constexpr const char *DEVICES[] = {
 };
 
 constexpr const char *BUILD_DESCRIPTION[] = {
-    "davinci-user 11 RKQ1.200826.002 V12.5.2.0.RFJCNXM release-keys",
-    "davinci-user 11 RKQ1.200826.002 V12.1.4.0.RFJMIXM release-keys",
-    "davinciin-user 11 RKQ1.200826.002 V12.1.4.0.RFJINXM release-keys",
+    "walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys",
+    "walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys",
+    "walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys",
 };
 
 constexpr const char *CLIENT_ID[] = {
