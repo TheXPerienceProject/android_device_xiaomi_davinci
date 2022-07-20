@@ -25,6 +25,8 @@ TARGET_OTA_ASSERT_DEVICE := davinci,davinciin
 # Audio
 AUDIO_FEATURE_ENABLED_EXT_AMPLIFIER := true
 
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/framework_manifest.xml
+
 # Fingerprint
 TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/xiaomi:libudfps_extension.xiaomi
 TARGET_USES_FOD_ZPOS := true
