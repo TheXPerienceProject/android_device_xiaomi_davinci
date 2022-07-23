@@ -34,6 +34,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    GoogleCameraArnova \
     vendor.xiaomi.hardware.motor@1.0.vendor
 
 PRODUCT_SOONG_NAMESPACES += \
