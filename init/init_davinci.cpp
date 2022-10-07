@@ -126,9 +126,12 @@ void vendor_load_properties() {
 
   if (region == "CN") {
     load_props(DEVICES[1], false, false);
+    property_override("bluetooth.device.default_name", "Redmi K20");
   } else if (region == "INDIA") {
     load_props(DEVICES[1], false, true);
+    property_override("bluetooth.device.default_name", "Redmi K20");
   } else if (region == "GLOBAL") {
     load_props(DEVICES[0], true, false);
+    property_override("bluetooth.device.default_name", "Mi 9T");
   }
 }
