@@ -10,3 +10,4 @@ libSuperSensorCPU.so
 libSuperSensor.so
 libVDClearShot.so
 libVDSuperPhotoAPI.so
+libqti-perfd-client.so

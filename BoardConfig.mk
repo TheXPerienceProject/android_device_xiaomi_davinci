@@ -16,6 +16,9 @@
 
 BOARD_VENDOR := xiaomi
 
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 DEVICE_PATH := device/xiaomi/davinci
 
 # Inherit from proprietary files
@@ -79,6 +82,7 @@ LOC_HIDL_VERSION := 4.0
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
 DEVICE_MANIFEST_FILE += hardware/qcom-caf/sm8150/media/conf_files/sm6150/c2_manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE +=  $(DEVICE_PATH)/framework_compatibility_matrix.xml
 ODM_MANIFEST_SKUS += davinci
 ODM_MANIFEST_DAVINCI_FILES := \
     $(DEVICE_PATH)/configs/hidl/manifest-nfc.xml
@@ -87,9 +91,11 @@ ODM_MANIFEST_DAVINCI_FILES := \
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
-
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    LLVM=1 \
+    LLVM_IAS=1
 TARGET_KERNEL_CONFIG := davinci_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6150
+TARGET_KERNEL_SOURCE := kernel/xiaomi/davinci
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := yuki
 TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/yuki-clang
@@ -178,7 +184,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # Sepolicy
 TARGET_SEPOLICY_DIR := msmsteppe
-include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
+include device/qcom/sepolicy_vndr/SEPolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
