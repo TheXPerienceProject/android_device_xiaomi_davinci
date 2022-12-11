@@ -341,6 +341,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_ENFORCE_RRO_TARGETS += *
 
 # Power
+TARGET_PROVIDES_XIAOMI_POWERHAL := true
 PRODUCT_PACKAGES += \
     android.hardware.power-service.xiaomi-libperfmgr
 
