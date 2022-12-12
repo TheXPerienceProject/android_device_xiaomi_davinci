@@ -30,9 +30,22 @@
 on post-fs-data
     mkdir /data/vendor/nfc 0770 nfc nfc
 
+    # Create fingerprint related directory
+    mkdir /data/vendor/fpc 0770 system system
+    mkdir /data/vendor/goodix 0770 system system
+
 on init
     write /sys/class/leds/green/max_brightness 32
     write /sys/class/leds/blue/max_brightness 32
+
+on boot
+    # Set fingerprint related permissions
+    chown system system /sys/bus/platform/devices/soc/soc:fpc1020/irq
+    chown system system /sys/bus/platform/devices/soc/soc:fpc1020/wakeup_enable
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui
+
+    # Create fingerprint related directory
+    mkdir /mnt/vendor/persist/goodix 0770 system system
 
 on property:ro.boot.product.hardware.sku=davinci
     enable vendor.nfc_hal_service
